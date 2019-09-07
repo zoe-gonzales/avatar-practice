@@ -5,4 +5,4 @@
 http://golang.org/pkg/crypto/ <br>
 http://golang.org/pkg/image/ <br>
 http://en.wikipedia.org/wiki/Identicon <br>
-http:/haacked.comarchive20070122Identicons_as_Visual_Fingerprints.aspx/
+http://haacked.com/archive/2007/01/22/Identicons_as_Visual_Fingerprints.aspx/
