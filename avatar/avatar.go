@@ -1,6 +1,7 @@
 package avatar
 
 import (
+	"fmt"
 	"image"
 	"image/color"
 	"image/png"
@@ -9,7 +10,7 @@ import (
 )
 
 // Generate function creates a png file from image content
-func Generate() {
+func Generate(hsh []byte) {
 	// define points using length
 	length := 200
 	upLeft := image.Point{0, 0}
@@ -17,6 +18,9 @@ func Generate() {
 	// generate new image
 	img := image.NewRGBA(image.Rectangle{upLeft, downRight})
 	// define colors
+	for _, b := range hsh {
+		fmt.Println(b)
+	}
 	plum := color.RGBA{145, 61, 136, 0xff}
 	black := color.RGBA{0, 0, 0, 0xff}
 	purple := color.RGBA{140, 20, 252, 0xff}

@@ -11,8 +11,8 @@ import (
 func main() {
 	fmt.Println()
 	e := os.Args[1]
-	hash.Email(e)
-	avatar.Generate()
+	h := hash.Email(e)
+	avatar.Generate(h)
 }
 
 // Given a personal information
