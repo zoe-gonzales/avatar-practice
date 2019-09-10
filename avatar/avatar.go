@@ -18,33 +18,34 @@ func Generate(hsh []byte) {
 	// generate new image
 	img := image.NewRGBA(image.Rectangle{upLeft, downRight})
 	// define colors
-	for _, b := range hsh {
-		fmt.Println(b)
-	}
-	plum := color.RGBA{145, 61, 136, 0xff}
-	black := color.RGBA{0, 0, 0, 0xff}
-	purple := color.RGBA{140, 20, 252, 0xff}
-	white := color.RGBA{255, 255, 255, 0xff}
+	color1 := color.RGBA{hsh[0], hsh[1], hsh[2], 0xff}
+	color2 := color.RGBA{hsh[3], hsh[4], hsh[5], 0xff}
+	color3 := color.RGBA{hsh[5], hsh[7], hsh[8], 0xff}
+	color4 := color.RGBA{hsh[9], hsh[10], hsh[11], 0xff}
 
-	// fill image in with color
-	for x := 0; x < length; x++ {
-		for y := 0; y < length; y++ {
-			switch {
-			// upper left quadrant
-			case x < length/2 && y < length/2:
-				img.Set(x, y, plum)
-			// lower left quadrant
-			case x < length/2 && y > length/2:
-				img.Set(x, y, purple)
-			// lower right quadrant
-			case x >= length/2 && y >= length/2:
-				img.Set(x, y, black)
-			// upper right quadrant
-			case x > length/2 && y < length/2:
-				img.Set(x, y, white)
-			// default to black
-			default:
-				img.Set(x, y, black)
+	for j := 0; j < len(hsh); j++ {
+		fmt.Printf("%v \n", hsh[j]) // uint8
+		b := int(hsh[j])
+		// fill image in with color
+		for x := 0; x < length; x++ {
+			for y := 0; y < length; y++ {
+				switch {
+				// upper left quadrant
+				case x < b && y < b:
+					img.Set(x, y, color1)
+				// lower left quadrant
+				case x < b && y > b:
+					img.Set(x, y, color2)
+				// lower right quadrant
+				case x > b && y > b:
+					img.Set(x, y, color3)
+				// upper right quadrant
+				case x > b && y < b:
+					img.Set(x, y, color4)
+				// default to black
+				default:
+					img.Set(x, y, color.Black)
+				}
 			}
 		}
 	}
