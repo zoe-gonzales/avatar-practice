@@ -2,7 +2,6 @@ package hash
 
 import (
 	"crypto/sha1"
-	"fmt"
 	"io"
 )
 
@@ -12,6 +11,5 @@ func Email(email string) []byte {
 	h := sha1.New()
 	// 2) use io package to write value to it (added to byte slice)
 	io.WriteString(h, email)
-	fmt.Printf("% x \n", h.Sum(nil))
 	return h.Sum(nil)
 }
