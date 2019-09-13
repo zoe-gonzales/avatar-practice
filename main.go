@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"os"
 
 	"github.com/zoe-gonzales/avatar-practice/avatar"
@@ -12,9 +13,11 @@ import (
 // generate a unique avatar
 
 func main() {
-	e := os.Args[1]
+	if len(os.Args) != 2 {
+		log.Fatal("\n Error: You must provide input to create an avatar. \n Please provide a single input without spaces: username, email, etc.")
+	}
 	// Take input (CL arg) and create a hash from this input
-	h := hash.Email(e)
+	h := hash.Email(os.Args[1])
 	// Use hash to create an image
 	avatar.Generate(h)
 }
