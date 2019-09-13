@@ -13,13 +13,11 @@ After working on this for a while, I've learned that the main challenge of this 
 
 **Updates**: The way the image is filled is changed to use each of the values of the hash. This might be the most hack solution, but it creates a pretty cool effect for the resulting png, which is more unique in most cases. See below for updates!
 
-<img src="./samples/hello.png" alt="hello" height="200px" width="200px">
-
-New version: :arrow_right:
-
-<img src="./samples/hello2.png" alt="hello2" height="200px" width="200px">
-
 input: `hello` <br>
+
+<div>
+    <img src="./samples/hello.png" alt="hello" height="200px" width="200px"> New version: <img src="./samples/hello2.png" alt="hello2" height="200px" width="200px">
+</div>
 
 <img src="./samples/hellomy.png" alt="hellomy" height="200px" width="200px">
 
