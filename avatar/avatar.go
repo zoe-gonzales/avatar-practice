@@ -9,7 +9,7 @@ import (
 )
 
 // Generate function creates a png file from image content
-func Generate(hsh []byte) {
+func Generate(hsh []byte, filename string) {
 	// define points using length
 	length := 200
 	upLeft := image.Point{0, 0}
@@ -19,7 +19,7 @@ func Generate(hsh []byte) {
 	// fill picture using hash values
 	colorPicture(hsh, length, img)
 	// generate png file
-	avatar, _ := os.Create("avatar.png")
+	avatar, _ := os.Create(filename + ".png")
 	// encode png with img content
 	err := png.Encode(avatar, img)
 	if err != nil {
