@@ -19,5 +19,5 @@ func main() {
 	// Take input (CL arg) and create a hash from this input
 	h := hash.Email(os.Args[1])
 	// Use hash to create an image
-	avatar.Generate(h, "user-1")
+	avatar.Generate(h, "user-1", "./images/")
 }
